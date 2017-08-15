@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="sv" ng-app="turboApp">
   <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Styles/main.css">
-    <link rel="stylesheet" type="text/css" href="Styles/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="Styles/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
 
-    <script type="text/javascript" src="Scripts/angular.min.js"></script>
-    <script type="text/javascript" src="Scripts/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+
+    <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="bower_components/fullcalendar/dist/lang-all.js"></script>
+    <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="Scripts/app.js"></script>
     <script type="text/javascript" src="Scripts/Controllers/TurboController.js"></script>
   </head>
   <body>
     <main>
       <div ng-controller="TurboController">
+        <div class="container">
+          <div class="col-xs-6">
+            <div class="calendar" ui-calendar="calendarOptions" calendar="turboCalendar"></div>
+          </div>
 
+          <div class="col-xs-6 today">
+            <lengend>
+              <h3>Idag</h3>
+              <div class="todayContainer">
+                {{today.dayShortName}}
+                {{today.monthName}}
+              </div>
+            </legend>
+          </div>
+        </div>
       </div>
     </main>
   </body>
