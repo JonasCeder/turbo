@@ -1,1 +1,1 @@
-var turboApp = angular.module('turboApp', []);
+var turboApp = angular.module('turboApp', ['ui.calendar']);
